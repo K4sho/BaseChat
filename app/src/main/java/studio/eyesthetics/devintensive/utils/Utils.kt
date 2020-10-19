@@ -1,26 +1,24 @@
 package ru.skillbranch.devintensive.utils
 
+import ru.skillbranch.devintensive.extensions.*
+
+/**
+ * Created by Spinking on 27.06.2019.
+ */
+
 object Utils {
-    fun parseFullName(fullName: String?) : Pair<String?, String?> {
+    fun parseFullName(fullName:String?) : Pair<String?, String?> {
         val trim = fullName?.trim()
 
         val parts : List<String>? = trim?.split(" ")
 
         var firstName = parts?.getOrNull(0)
+
         var lastName = parts?.getOrNull(1)
 
-        if (firstName == "") firstName = null
-        if (lastName == "") lastName = null
-
+        if(firstName == "") firstName = null
+        if(lastName == "") lastName = null
         return firstName to lastName
-    }
-
-    fun toInitials(firstName: String?, lastName: String?): String? {
-        if(firstName == null && lastName == null) return null
-        val first = "${firstName?.firstOrNull()?:""}${lastName?.firstOrNull()?:""}"
-        val p = Regex("\\s")
-        if(first.matches(p)) return null
-        return first.toUpperCase()
     }
 
     fun transliteration(payload: String, divider: String = " "): String {
@@ -108,4 +106,16 @@ object Utils {
 
         return res
     }
+
+    fun toInitials(firstName: String?, lastName: String?): String? {
+        if(firstName == null && lastName == null) return null
+        val first = "${firstName?.firstOrNull()?:""}${lastName?.firstOrNull()?:""}"
+        val p = Regex("\\s")
+        if(first.matches(p)) return null
+        return first.toUpperCase()
+    }
+
+
+
+
 }
