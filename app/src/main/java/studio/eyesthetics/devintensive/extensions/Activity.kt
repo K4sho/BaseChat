@@ -4,8 +4,13 @@ import android.app.Activity
 import android.graphics.Rect
 import android.view.View
 
+
+/**
+ * Created by BashkatovSM on 12.07.2019
+ */
+
 fun Activity.hideKeyboard() {
-    if (currentFocus == null) View(this) else currentFocus?.let { hideKeyboard(it) }
+    hideKeyboard(if (currentFocus == null) View(this) else currentFocus)
 }
 
 fun Activity.isKeyboardOpen(): Boolean{
@@ -19,3 +24,6 @@ fun Activity.isKeyboardOpen(): Boolean{
 }
 
 fun Activity.isKeyboardClosed(): Boolean = !this.isKeyboardOpen()
+
+
+

@@ -2,7 +2,6 @@ package ru.skillbranch.devintensive.extensions
 
 import android.app.Activity
 import android.content.Context
-import android.content.res.TypedArray
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -12,6 +11,6 @@ fun Context.hideKeyboard(view: View) {
     inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 }
 
-fun Context.dpToPx(dp: Float): Float {
-    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, this.resources.displayMetrics)
+fun Context.dpToPx (dp: Float): Float {
+    return TypedValue.applyDimension (TypedValue.COMPLEX_UNIT_DIP , dp, this.resources.displayMetrics)
 }
