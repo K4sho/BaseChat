@@ -12,3 +12,26 @@ fun String.stripHtml(): String {
     str = str.replace(Regex("\\s+"), " ")
     return str
 }
+
+fun String.validUrl(): Boolean {
+
+    val exceptions = arrayOf(
+        "enterprise",
+        "features",
+        "topics",
+        "collections",
+        "trending",
+        "events",
+        "marketplace",
+        "pricing",
+        "nonprofit",
+        "customer-stories",
+        "security",
+        "login",
+        "join"
+    ).joinToString( "|\\b", "\\b" )
+
+    val regex = Regex("^(?:https://)?(?:www.)?(?:github.com/)[^/|\\s]+((?:$exceptions)|(?<!$exceptions))(?:/)?$")
+
+    return (this.isBlank() || regex.matches(this))
+}
