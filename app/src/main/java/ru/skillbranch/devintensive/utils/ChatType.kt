@@ -1,4 +1,4 @@
-package ru.skillbranch.devintensive.models.data
+package ru.skillbranch.devintensive.utils
 
 import ru.skillbranch.devintensive.R
 

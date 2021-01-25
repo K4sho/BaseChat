@@ -1,6 +1,5 @@
 package ru.skillbranch.devintensive.ui.adapters
 
-import android.graphics.Color
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,7 @@ import kotlinx.android.synthetic.main.item_chat_group.*
 import kotlinx.android.synthetic.main.item_chat_single.*
 import ru.skillbranch.devintensive.R
 import ru.skillbranch.devintensive.models.data.ChatItem
-import ru.skillbranch.devintensive.models.data.ChatType
+import ru.skillbranch.devintensive.utils.ChatType
 
 class ChatAdapter(val listener: (ChatItem) -> Unit) : RecyclerView.Adapter<ChatAdapter.ChatItemViewHolder>() {
     var items : List<ChatItem> = listOf()
@@ -56,7 +55,7 @@ class ChatAdapter(val listener: (ChatItem) -> Unit) : RecyclerView.Adapter<ChatA
     }
 
     abstract inner class ChatItemViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
-        abstract fun bind(item:ChatItem, listener: (ChatItem) -> Unit)
+        abstract fun bind(item: ChatItem, listener: (ChatItem) -> Unit)
     }
 
     abstract inner class TouchableChatItemViewHolder(override val containerView: View) : ChatItemViewHolder(containerView), ItemTouchViewHolder {
@@ -76,7 +75,7 @@ class ChatAdapter(val listener: (ChatItem) -> Unit) : RecyclerView.Adapter<ChatA
     }
 
     inner class SingleViewHolder(override val containerView: View) : TouchableChatItemViewHolder(containerView){
-        override fun bind(item:ChatItem, listener: (ChatItem) -> Unit){
+        override fun bind(item: ChatItem, listener: (ChatItem) -> Unit){
             if (item.avatar==null) {
                 Glide.with(itemView)
                     .clear(iv_avatar_single)

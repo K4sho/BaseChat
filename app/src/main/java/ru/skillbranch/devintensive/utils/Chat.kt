@@ -2,7 +2,7 @@ package ru.skillbranch.devintensive.extensions
 
 import ru.skillbranch.devintensive.models.data.Chat
 import ru.skillbranch.devintensive.models.data.ChatItem
-import ru.skillbranch.devintensive.models.data.ChatType
+import ru.skillbranch.devintensive.utils.ChatType
 import ru.skillbranch.devintensive.utils.Utils
 
 fun Chat.toChatItem(): ChatItem {

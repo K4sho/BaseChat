@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_group.*
 import kotlinx.android.synthetic.main.activity_main.toolbar
 import ru.skillbranch.devintensive.R
 import ru.skillbranch.devintensive.models.data.UserItem
-import ru.skillbranch.devintensive.ui.BaseActivity
+import ru.skillbranch.devintensive.utils.BaseActivity
 import ru.skillbranch.devintensive.ui.adapters.UserAdapter
 import ru.skillbranch.devintensive.viewmodels.GroupViewModel
 
