@@ -1,6 +1,6 @@
 package ru.skillbranch.devintensive.models.data
 
-import ru.skillbranch.devintensive.utils.ChatType
+import ru.skillbranch.devintensive.models.data.ChatType
 
 
 data class ChatItem (

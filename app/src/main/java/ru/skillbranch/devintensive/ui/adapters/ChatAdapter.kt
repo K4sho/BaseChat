@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.item_chat_group.*
 import kotlinx.android.synthetic.main.item_chat_single.*
 import ru.skillbranch.devintensive.R
 import ru.skillbranch.devintensive.models.data.ChatItem
-import ru.skillbranch.devintensive.utils.ChatType
+import ru.skillbranch.devintensive.models.data.ChatType
 
 class ChatAdapter(val listener: (ChatItem) -> Unit) : RecyclerView.Adapter<ChatAdapter.ChatItemViewHolder>() {
     var items : List<ChatItem> = listOf()
