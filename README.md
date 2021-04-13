@@ -6,3 +6,5 @@
 - API 23.
 - Material Design, RecyclerView.
 - Android Architecture Components.
+- Custom View.
+- Kotlin Coroutines.
