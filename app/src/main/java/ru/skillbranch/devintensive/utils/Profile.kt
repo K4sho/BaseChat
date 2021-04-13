@@ -1,6 +1,4 @@
-package ru.skillbranch.devintensive.models
-
-import ru.skillbranch.devintensive.utils.Utils
+package ru.skillbranch.devintensive.utils
 
 /**
  * Created by BashkatovSM on 23.07.2019

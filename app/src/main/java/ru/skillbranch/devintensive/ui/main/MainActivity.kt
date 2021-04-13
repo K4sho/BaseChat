@@ -3,7 +3,7 @@ package ru.skillbranch.devintensive.ui.main
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import androidx.appcompat.app.AppCompatDelegate
+import android.view.MenuItem
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import ru.skillbranch.devintensive.R
 import ru.skillbranch.devintensive.extensions.applyStyle
 import ru.skillbranch.devintensive.models.data.ChatType
-import ru.skillbranch.devintensive.ui.BaseActivity
+import ru.skillbranch.devintensive.utils.BaseActivity
 import ru.skillbranch.devintensive.ui.adapters.ChatAdapter
 import ru.skillbranch.devintensive.ui.adapters.ChatItemTouchHelperCallback
 import ru.skillbranch.devintensive.ui.archive.ArchiveActivity
@@ -96,13 +96,22 @@ class MainActivity : BaseActivity() {
             // Переход на другую активити - для создания группы
             intent = Intent(this, GroupActivity::class.java)
             startActivity(intent)
-            //verridePendingTransition(R.anim.idle, R.anim.bottom_up)
         }
     }
 
     private fun initViewModel() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.getChatData().observe(this, Observer { chatAdapter.updateData(it)})
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item?.itemId == android.R.id.home) {
+            finish()
+            //overridePendingTransition(R.anim.idle, R.anim.bottom_down)
+            return true
+        } else {
+            return super.onOptionsItemSelected(item)
+        }
     }
 
 }

@@ -1,6 +1,5 @@
 package ru.skillbranch.devintensive.ui.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,13 +7,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.item_chat_group.*
-import kotlinx.android.synthetic.main.item_chat_single.*
 import kotlinx.android.synthetic.main.item_user_list.*
 import kotlinx.android.synthetic.main.item_user_list.sv_indicator
 import ru.skillbranch.devintensive.R
-import ru.skillbranch.devintensive.models.data.Chat
-import ru.skillbranch.devintensive.models.data.ChatItem
 import ru.skillbranch.devintensive.models.data.UserItem
 
 class UserAdapter(val listener: (UserItem) -> Unit):RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
@@ -49,7 +44,7 @@ class UserAdapter(val listener: (UserItem) -> Unit):RecyclerView.Adapter<UserAda
     }
 
     inner class UserViewHolder(override val containerView: View) :RecyclerView.ViewHolder(containerView), LayoutContainer  {
-        fun bind(user:UserItem, listener: (UserItem) -> Unit){
+        fun bind(user: UserItem, listener: (UserItem) -> Unit){
             iv_selected.visibility = if(user.isSelected) View.VISIBLE else View.GONE
             if (user.avatar==null) {
                 Glide.with(itemView)
