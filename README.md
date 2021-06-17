@@ -1,7 +1,6 @@
-# dev-intensive-2019
-Решения домашних заданий `dev-intensive` от `skillbranch`
+# Пример базового функционала чата
 
-Использовались:
+Стэк:
 - Kotlin.
 - API 23.
 - Material Design, RecyclerView.
